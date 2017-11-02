@@ -7,6 +7,8 @@ ifndef TARGET_COMPRESSED_KERNEL
 TARGET_COMPRESSED_KERNEL=true
 endif
 
+HIKEY_USE_DRM_HWCOMPOSER := false
+
 ifeq ($(TARGET_COMPRESSED_KERNEL), false)
 TARGET_PREBUILT_KERNEL := device/linaro/hikey-kernel/Image-dtb-$(TARGET_KERNEL_USE)
 else
@@ -25,6 +27,7 @@ else
     HIKEY_USE_LEGACY_TI_BLUETOOTH := true
   else
     HIKEY_USE_LEGACY_TI_BLUETOOTH := false
+    HIKEY_USE_DRM_HWCOMPOSER := true
   endif
   TARGET_FSTAB := fstab.hikey
 endif

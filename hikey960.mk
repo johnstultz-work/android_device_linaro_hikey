@@ -6,8 +6,10 @@ TARGET_PREBUILT_DTB := device/linaro/hikey-kernel/hi3660-hikey960.dtb-$(TARGET_K
 
 ifeq ($(TARGET_KERNEL_USE), 4.4)
   HIKEY_USE_LEGACY_TI_BLUETOOTH := true
+  HIKEY_USE_DRM_HWCOMPOSER := false
 else
   HIKEY_USE_LEGACY_TI_BLUETOOTH := false
+  HIKEY_USE_DRM_HWCOMPOSER := true
 endif
 
 #
